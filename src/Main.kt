@@ -51,6 +51,7 @@ fun main() {
 
     println()
 
+
     listAllCages(cages)
     println()
 
@@ -154,7 +155,13 @@ fun listAllCages(cageList: List<String>) {
  */
 fun listAllMonkeys(cageList: List<String>) {
     println("MONKEYS")
-
+    for (cage in cageList) {
+        if (cage == "---") {
+        }
+        else {
+        println("$cage")
+            }
+    }
 }
 
 
@@ -168,8 +175,13 @@ fun listAllMonkeys(cageList: List<String>) {
  */
 fun listEmptyCages(cageList: List<String>) {
     println("EMPTY CAGES")
-
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    var index = 0
+    for (cage in cageList) {
+        index ++
+        if (cage == "---") {
+            println("Cage ${index}")
+        }
+    }
 }
 
 
@@ -187,8 +199,16 @@ fun listEmptyCages(cageList: List<String>) {
  */
 fun listAllMonkeysAndCages(cageList: List<String>) {
     println("MONKEYS & CAGES")
+    var index = 0
+    for ((i, cage) in cageList.withIndex()) {
+        index ++
+        if (cage == "---") {
 
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+        }
+        else {
+            println("${cage.padEnd(7)} (Cage $index)")
+        }
+    }
 }
 
 
@@ -196,8 +216,15 @@ fun listAllMonkeysAndCages(cageList: List<String>) {
  * Returns the number of monkeys found in the given cage list
  */
 fun monkeyCount(cageList: List<String>): Int {
-
-    return 0    // REPLACE THIS WITH YOUR CODE!
+    var monkey_num = 0
+    for (cage in cageList) {
+        if (cage == "---") {
+        }
+        else {
+            monkey_num ++
+        }
+    }
+    return monkey_num
 }
 
 
@@ -205,8 +232,13 @@ fun monkeyCount(cageList: List<String>): Int {
  * Returns the number of cages that are empty in the given cage list
  */
 fun emptyCount(cageList: List<String>): Int {
-
-    return 0    // REPLACE THIS WITH YOUR CODE!
+    var empty_num = 0
+    for (cage in cageList) {
+        if (cage == "---") {
+            empty_num ++
+        }
+    }
+    return empty_num
 }
 
 
@@ -222,6 +254,9 @@ fun emptyCount(cageList: List<String>): Int {
  * Tip: the String.padEnd(N) function will help you here
  */
 fun showMonkeyCages(cageList: List<String>) {
+    println("+--------+--------+--------+--------+")
+    println("| Cage 1 | Cage 2 | Cage 3 | Cage 4 |")
+    println("+--------+--------+--------+--------+")
 
     check(false)    // REPLACE THIS WITH YOUR CODE!
 }
