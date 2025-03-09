@@ -254,11 +254,35 @@ fun emptyCount(cageList: List<String>): Int {
  * Tip: the String.padEnd(N) function will help you here
  */
 fun showMonkeyCages(cageList: List<String>) {
+    println("         +--------+--------+         ")
+    println("         |     MONKEYS     |         ")
     println("+--------+--------+--------+--------+")
     println("| Cage 1 | Cage 2 | Cage 3 | Cage 4 |")
     println("+--------+--------+--------+--------+")
-
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    print("| ")
+    var index = 0
+    for (cage in cageList) {
+        index ++
+        if (index < 5) {
+            print("${cage.padEnd(7)}")
+            print("| ")
+        }
+    }
+    println()
+    println("+--------+--------+--------+--------+")
+    println("| Cage 5 | Cage 6 | Cage 7 | Cage 8 |")
+    println("+--------+--------+--------+--------+")
+    print("| ")
+    var index_2 = 0
+    for (cage in cageList) {
+        index_2 ++
+        if (index_2 > 4) {
+            print("${cage.padEnd(7)}")
+            print("| ")
+        }
+    }
+    println()
+    println("+--------+--------+--------+--------+")
 }
 
 
@@ -267,8 +291,7 @@ fun showMonkeyCages(cageList: List<String>) {
  */
 fun clearCage(cageList: MutableList<String>, cageNum: Int) {
     println("--- Clearing cage $cageNum")
-
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    cageList[cageNum - 1] = (EMPTY)
 }
 
 
@@ -280,8 +303,20 @@ fun clearCage(cageList: MutableList<String>, cageNum: Int) {
  */
 fun swapCages(cageList: MutableList<String>, cageNum1: Int, cageNum2: Int) {
     println("<-> Swapping cages $cageNum1 and $cageNum2")
-
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    var index = 0
+    var monkey_1 = "placeholder"
+    var monkey_2 = "placeholder"
+    for (cage in cageList) {
+        index++
+        if (index == cageNum1) {
+            monkey_1 = "$cage"
+        }
+        if (index == cageNum2) {
+            monkey_2 = "$cage"
+        }
+    }
+    cageList[cageNum1 - 1] = monkey_2
+    cageList[cageNum2 - 1] = monkey_1
 }
 
 
